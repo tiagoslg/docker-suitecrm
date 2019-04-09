@@ -12,7 +12,7 @@ dbdata:
   volumes:
     - /var/lib/mysql
 db:
-  image: mysql:5.7
+  image: 'hypriot/rpi-mysql'
   volumes_from:
     - dbdata
   ports:
