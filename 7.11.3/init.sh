@@ -27,6 +27,5 @@ fi
 
 # Remove Apache PID lock file so apache can start next time
 rm -f /run/apache2/apache2.pid
-chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}
 # Start Apache
 apachectl -DFOREGROUND

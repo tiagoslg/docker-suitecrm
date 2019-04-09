@@ -27,13 +27,16 @@ ADD php.ini /usr/local/etc/php/php.ini
 ADD config_override.php.pyt /usr/local/src/config_override.php.pyt
 ADD envtemplate.py /usr/local/bin/envtemplate.py
 ADD init.sh /usr/local/bin/init.sh
+ADD change_owner.sh /usr/local/bin/change_owner.sh
 
 RUN chmod u+x /usr/local/bin/init.sh
+RUN chmod u+x /usr/local/bin/change_owner.sh
 RUN chmod u+x /usr/local/bin/envtemplate.py
 
 ADD crons.conf /etc/cron.d/crons.conf
 RUN crontab /etc/cron.d/crons.conf
 
 EXPOSE 80
+CMD ["/usr/local/bin/change_owner.sh"]
 ENTRYPOINT ["/usr/local/bin/init.sh"]
 
