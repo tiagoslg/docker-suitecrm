@@ -37,6 +37,12 @@ ADD crons.conf /etc/cron.d/crons.conf
 RUN crontab /etc/cron.d/crons.conf
 
 EXPOSE 80
-CMD ["/usr/local/bin/change_owner.sh"]
+#RUN /usr/local/bin/change_owner.sh
+#
+#RUN chown -hR www-data:www-data /usr/local/apache2/
+##setcap to bind to privileged ports as non-root
+#RUN setcap 'cap_net_bind_service=+ep' /usr/local/apache2/bin/httpd
+#RUN getcap /usr/local/apache2/bin/httpd
+
 ENTRYPOINT ["/usr/local/bin/init.sh"]
 

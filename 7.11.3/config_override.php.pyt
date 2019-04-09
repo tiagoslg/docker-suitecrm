@@ -13,5 +13,9 @@
     $$sugar_config['dbconfig']['db_host_name'] = '$db_host_name';
     $$sugar_config['dbconfig']['db_user_name'] = '$db_user_name';
     $$sugar_config['dbconfig']['db_password'] = '$db_password';
+    $$sugar_config['default_permissions']['dir_mode'] = 1533;
+    $$sugar_config['default_permissions']['file_mode'] = 436;
+    $$sugar_config['default_permissions']['user'] = 'www-data';
+    $$sugar_config['default_permissions']['group'] = 'www-data';
   }
 ?>

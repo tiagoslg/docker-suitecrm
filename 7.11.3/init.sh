@@ -23,6 +23,8 @@ if [ -z "$DATABASE_NAME" ]; then
 fi
 
 /usr/local/bin/envtemplate.py -i /usr/local/src/config_override.php.pyt -o /var/www/html/config_override.php
+chmod 766 /var/www/html/config_override.php
+chown www-data:www-data /var/www/html/config_override.php
 /usr/sbin/cron
 
 # Remove Apache PID lock file so apache can start next time
